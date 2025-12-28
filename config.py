@@ -10,5 +10,6 @@ class Config:
     DB_NAME = environ.get('DB_NAME')
     DB_PORT = environ.get('DB_PORT', '3306')
     
-    SQLALCHEMY_DATABASE_URI = f'mysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}'
+    # SQLALCHEMY_DATABASE_URI = f'mysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}'
+    SQLALCHEMY_DATABASE_URI = "sqlite:///khel_club.db"
     SQLALCHEMY_TRACK_MODIFICATIONS = False

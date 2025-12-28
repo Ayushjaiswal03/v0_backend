@@ -3,6 +3,11 @@ from enum import Enum
 
 db = SQLAlchemy()
 
+class MatchOutcome(str, Enum):
+    NORMAL = "normal"
+    WALKOVER = "walkover"
+    FORFEIT = "forfeit"
+
 class MatchType(str, Enum):
     SINGLES = 'singles'
     DOUBLES = 'doubles'
@@ -96,6 +101,7 @@ class Match(db.Model):
     successor = db.Column(db.Integer, db.ForeignKey('match.id'), nullable=True)
     bracket_position = db.Column(db.Integer, nullable=True)
     round_number = db.Column(db.Integer, nullable=True)
+    outcome = db.Column(db.String(20), default="normal")
 
 class Score(db.Model):
     id = db.Column(db.Integer, primary_key=True)
