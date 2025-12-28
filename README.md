@@ -203,3 +203,11 @@ Frontend
 cd v0_frontend
 npm install --legacy-peer-deps
 npm run dev
+
+
+
+Known Limitations
+
+    Some frontend-referenced APIs are not implemented in this backend
+    CORS issues may occur due to missing routes
+    These are known issues in the provided v0 repository
